@@ -29,6 +29,7 @@ def get_winner(user_choice, computer_choice):
     # (0) - paper, (1) - scissors, (2) - rock
     if user_choice == computer_choice:
         print("Both players chose {}".format(Choice(computer_choice).name))
+        return False
     elif user_choice == 0: #0
         if computer_choice == 1:
             print("Computer won! Scissors > Paper")
@@ -44,6 +45,7 @@ def get_winner(user_choice, computer_choice):
             print("You won! Rock > Scissors")
         else:
             print("Computer won! Paper > Rock")
+    return True
 
 
 user_choice1 = get_user_choice("Witold")
@@ -53,4 +55,16 @@ computer_choice = get_computer_choice()
 
 get_winner(user_choice1, computer_choice)
 
+def play_unless_winner():
+    winner = None
+
+    user_choice1 = get_user_choice("Witold")
+    computer_choice = get_computer_choice()
+    winner = get_winner(user_choice1, computer_choice)
+
+    while not(winner):
+        user_choice1 = get_user_choice("Witold")
+        computer_choice = get_computer_choice()
+        winner = get_winner(user_choice1, computer_choice)
+play_unless_winner()
 # get_winner(user_choice1, user_choice2)
