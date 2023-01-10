@@ -3,5 +3,6 @@ exercises/1-python-course-bro-code/*.txt
 dist
 build
 *.spec
+.env
 
 exercises/labs/*.txt
